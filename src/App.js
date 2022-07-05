@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Name from './comp/Name';
+import Email from './comp/Email';
+import Output from './comp/Output';
+import PhoneNo from './comp/PhoneNo';
+import { useState } from 'react';
 
 function App() {
+  const [name,setName] = useState("")
+  const [email,setEmail] = useState("shakti")
+  const [phoneNo,setPhoneNo] = useState("")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App container">
+      <Name name={name} setName={setName}></Name>
+      <Email email={email} setEmail={setEmail}></Email>
+      <PhoneNo phoneNo={phoneNo} setPhoneNo={setPhoneNo}></PhoneNo>
+      <Output name={name} email={email} phoneNo={phoneNo}></Output>
     </div>
   );
 }
